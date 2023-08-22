@@ -18,8 +18,8 @@ public class SimpleAutoCommand extends SequentialCommandGroup {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     addCommands(
-      new DrivetrainCommand(m_drivetrain, () -> 0.15, () -> 0.15),
-      new DrivetrainCommand(m_drivetrain, () -> -0.15, () -> -0.15)
+      new DrivetrainCommand(m_drivetrain, () -> 0.15, () -> 0.15).withTimeout(1),
+      new DrivetrainCommand(m_drivetrain, () -> -0.15, () -> -0.15).withTimeout(1)
     );
   }
 }
